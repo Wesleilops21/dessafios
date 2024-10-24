@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffcc00, #cccccc);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Altura total da tela */
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Alinha itens em coluna */
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px; /* Largura do formulário */
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #ffcc00;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%; /* Botão ocupa toda a largura do formulário */
+        }
+
+        button:hover {
+            background: #e6b800;
+        }
+
+        #mensagem {
+            margin-top: 20px;
+            font-size: 18px; /* Tamanho da mensagem */
+            color: #28a745; /* Cor verde para a mensagem de sucesso */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cadastro de Usuário</h1>
+        <form id="cadastroForm">
+            <input type="text" placeholder="Nome" required>
+            <input type="tel" placeholder="Telefone" required>
+            <input type="text" placeholder="Escolaridade" required>
+            <input type="text" placeholder="Cidade" required>
+            <select required>
+                <option value="">Selecione o Sexo</option>
+                <option value="feminino">Feminino</option>
+                <option value="masculino">Masculino</option>
+            </select>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <div id="mensagem" style="display: none;"></div>
+    </div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio do formulário
+            document.getElementById('mensagem').innerText = "Muito obrigado por se cadastrar!";
+            document.getElementById('mensagem').style.display = "block";
+        });
+    </script>
+
+</body>
+</html>

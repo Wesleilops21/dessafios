@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aula Back-End 3º Ano Polo Arapongas</title>
+<style>
+footer { 
+  bottom: 0; 
+  position: fixed; 
+  width: 100%; 
+  text-align: left;
+}
+</style>
+</head>
+<body>
+<h1>Calcule a Média do Aluno:</h1>
+<button onclick="validar()">Lance a Média!</button>
+<script>
+function validar() {
+  let cont = 1;
+  let media = 0;
+  let nome = window.prompt('Qual é o seu nome?');
+  while (cont <= 4) {
+    let notas = parseFloat(prompt(`Qual a nota ${cont}?`));
+    media += notas;
+    cont++;
+  }
+  media /= 4;
+  let result;
+  if (media >= 60) {
+    result = "Aprovado";
+  } else {
+    result = "Reprovado";
+  }
+  window.alert(`O aluno ${nome} tem a média ${media} e está ${result}`);
+}
+</script>
+<footer>
+  <h2>parseFloat é uma função incorporada no JavaScript que permite realizar essa conversão para um número de ponto flutuante.</h2>
+</footer>
+</body>
+</html>

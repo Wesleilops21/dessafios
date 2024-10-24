@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aula Back-End 3º Ano Polo Arapongas</title>
+</head>
+<body>
+  <h1>Faça uma conversão de distâncias:</h1>
+  <button onclick="calcular()">Converter</button>
+  
+  <script>
+    function calcular() {
+      let distancia = Number(window.prompt('Qual a medida em km?'));
+      
+      let metros = distancia * 1000;
+      let centimetros = distancia * 100000;
+      let milhas = distancia / 1.609;
+      let jardas = distancia * 1094;
+      let pes = distancia * 3281;
+      
+      window.alert(`A distância em metros é ${metros.toFixed(2)} metros.\n` +
+                   `A distância em centímetros é ${centimetros.toFixed(2)} centímetros.\n` +
+                   `A distância em milhas é ${milhas.toFixed(2)} milhas.\n` +
+                   `A distância em jardas é ${jardas.toFixed(2)} jardas.\n` +
+                   `A distância em pés é ${pes.toFixed(2)} pés.`);
+    }
+  </script>
+</body>
+</html>

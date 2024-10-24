@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Imagens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .carrossel {
+            overflow: hidden;
+            width: 800px; /* Ajuste a largura conforme necessário */
+            margin: auto;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slides img {
+            width: 100%; /* Ajusta a largura da imagem */
+            max-width: 800px; /* Limite máximo */
+        }
+    </style>
+</head>
+<body>
+    <div class="carrossel">
+        <div class="slides">
+            <img src="imgaleat-6ul-1.jpg" alt="Imagem 1">
+            <img src="images (1).jpeg" alt="Imagem 2">
+            <img src="gg.jpg" alt="Imagem 3">
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = slides.children.length;
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            const offset = -currentIndex * 100; // Mover para a esquerda
+            slides.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Troca de imagem a cada 3 segundos
+        setInterval(showNextSlide, 3000);
+    </script>
+</body>
+</html>

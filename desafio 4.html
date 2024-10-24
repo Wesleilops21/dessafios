@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conversão de Distâncias</title>
+</head>
+<body>
+  <h1>Faça uma conversão de distâncias:</h1>
+  <button onclick="calcular()">Faça a conversão</button>
+
+  <script>
+    function calcular() {
+      let distancia = Number(window.prompt('Qual a medida em km?'));
+      let metros = distancia * 1000;
+      let centimetros = distancia * 100000;
+      let milhas = distancia / 1.609;
+      let jardas = distancia * 1094;
+      let pes = distancia * 3281;
+
+      window.alert(`A distância em metros é ${metros.toFixed(2)} metros.\nEm centímetros é ${centimetros.toFixed(2)} centímetros.\nEm milhas é ${milhas.toFixed(2)} milhas.\nEm jardas é ${jardas.toFixed(2)} jardas.\nSe estivesse voando, a uma altura de um km equivale a ${pes.toFixed(2)} pés.`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de Aprovação do Aluno</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #resultado p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultado de Aprovação do Aluno</h1>
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <section id="resultado">
+        <p>O resultado é:</p>
+    </section>
+    <script>
+        function calcularMedia() {
+            // Solicita ao usuário as notas das disciplinas
+            let nota1 = Number(window.prompt('Digite a nota 1:'));
+            let nota2 = Number(window.prompt('Digite a nota 2:'));
+            let nota3 = Number(window.prompt('Digite a nota 3:'));
+
+            // Calcula a média
+            let media = (nota1 + nota2 + nota3) / 3;
+
+            // Determina a situação do aluno com base na média
+            let situacao;
+            if (media >= 60) {
+                situacao = 'Aprovado';
+            } else if (media > 30) {
+                situacao = 'Recuperação';
+            } else {
+                situacao = 'Reprovado';
+            }
+
+            // Exibe o resultado na página
+            let res = document.getElementById('resultado');
+            res.innerHTML = `<p>A média do aluno é ${media.toFixed(2)}. Situação: ${situacao}.</p>`;
+        }
+    </script>
+</body>
+</html>

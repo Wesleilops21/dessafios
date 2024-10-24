@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+</head>
+<body>
+    <h1>Desafio 3: Calcular Média e Dar Desconto</h1>
+
+    <section id="calculo-media">
+        <h2>Calcular Média do Aluno</h2>
+        <button onclick="calcularMedia()">Calcular Média</button>
+        <div id="resultado-media"></div>
+    </section>
+
+    <section id="dar-desconto">
+        <h2>Dar Desconto em Produto</h2>
+        <button onclick="darDesconto()">Aplicar Desconto</button>
+        <div id="resultado-desconto"></div>
+    </section>
+
+    <script>
+        function calcularMedia() {
+            let nome = window.prompt('Qual é o seu nome?');
+            let totalNotas = 0;
+            let media;
+
+            for (let i = 1; i <= 4; i++) {
+                let nota = parseFloat(window.prompt(`Qual é a nota ${i}?`));
+                totalNotas += nota;
+            }
+
+            media = totalNotas / 4;
+
+            let resultadoMedia = document.getElementById('resultado-media');
+            resultadoMedia.innerHTML = `<p>O aluno ${nome} obteve a média ${media.toFixed(2)}</p>`;
+        }
+
+        function darDesconto() {
+            let precoProduto = Number(window.prompt('Qual é o preço do produto?'));
+            let desconto = Number(window.prompt('Qual é o desconto aplicado em percentual?'));
+
+            let precoFinal = precoProduto * (1 - (desconto / 100));
+
+            let resultadoDesconto = document.getElementById('resultado-desconto');
+            resultadoDesconto.innerHTML = `<p>O preço do produto era R$ ${precoProduto.toFixed(2)}.</p>
+                                            <p>Com um desconto de ${desconto.toFixed(2)}%, o preço final é R$ ${precoFinal.toFixed(2)}.</p>`;
+        }
+    </script>
+</body>
+</html>

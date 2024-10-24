@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Imagens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffcc00, #cccccc);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Altura total da tela */
+            margin: 0;
+            text-align: center;
+            flex-direction: column; /* Alinha itens em coluna */
+        }
+
+        button {
+            background: #ffcc00;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px; /* Espaço acima do botão */
+        }
+
+        button:hover {
+            background: #e6b800;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap; /* Permite que as imagens quebrem em linha */
+        }
+
+        .image-container img {
+            width: 200px;
+            height: 150px;
+            margin: 10px;
+            border-radius: 10px;
+            object-fit: cover; /* Ajusta a imagem para evitar distorções */
+            display: none; /* Inicialmente escondido */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Exibir Imagens</h1>
+    <button id="showImagesButton">Mostrar Imagens</button>
+
+    <div class="image-container">
+        <img src="https://via.placeholder.com/200x150" alt="Imagem 1" id="image1">
+        <img src="https://via.placeholder.com/200x150" alt="Imagem 2" id="image2">
+        <img src="https://via.placeholder.com/200x150" alt="Imagem 3" id="image3">
+    </div>
+
+    <script>
+        document.getElementById('showImagesButton').addEventListener('click', function() {
+           

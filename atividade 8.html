@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Reajustes Calculos</title>
+</head>
+<body>
+  <h1>Calcular reajuste de funcionário!</h1>
+  <button onclick="calcularReajuste()">Iniciar a análise</button>
+  <section id="resultado">
+    <p>O resultado é:</p>
+  </section>
+
+  <script>
+    function calcularReajuste() {
+      let n1 = Number(window.prompt('Qual é o salário do funcionário?'));
+      let n2 = Number(window.prompt('Qual é o percentual do reajuste salarial?'));
+      let novoSalario = n1 + (n1 * (n2 / 100));
+      let res = document.getElementById('resultado');
+      res.innerHTML = `<p>O novo salário com o reajuste é de R$ ${novoSalario.toFixed(2)}</p>`;
+    }
+  </script>
+</body>
+</html>
